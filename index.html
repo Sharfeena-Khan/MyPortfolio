@@ -29,6 +29,13 @@
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
+  <style>
+    .alert {
+  padding: 20px;
+  background-color: #f44336;
+  color: white;
+}
+  </style>
 </head>
 
 <body>
@@ -57,7 +64,7 @@
   </header><!-- End Header -->
 
   <!-- ======= Hero Section ======= -->
-  <div id="hero" class="hero route bg-image" style="background-image: url(/PIC/MYPICbg.png);width;">
+  <div id="hero" class="hero route bg-image" style="background-image: url(./PIC/MYPICbg.png);width;">
     <div class="overlay-itro"></div>
     <div class="hero-content display-table">
       <div class="table-cell">
@@ -84,7 +91,7 @@
                   <div class="row">
                     <div class="col-sm-6 col-md-5 mx-auto " style="margin-top: 120px;">
                       <div class="about-img">
-                        <img src="/PIC/profile-pic.jpeg" class="img-fluid rounded b-shadow-a" alt="">
+                        <img src="./PIC/profile-pic.jpeg" class="img-fluid rounded b-shadow-a" alt="">
                       </div>
                     </div>
                    <!-- <div class="col-sm-6 col-md-7">
@@ -464,7 +471,7 @@
             <div class="work-box">
               <a href="/PIC/chola.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox">
                 <div class="work-img">
-                  <img src="/PIC/chola.jpg" alt="" class="img-fluid">
+                  <img src="./PIC/chola.jpg" alt="" class="img-fluid">
                 </div>
               </a>
               <div class="work-content">
@@ -488,7 +495,7 @@
             <div class="work-box">
               <a href="/PIC/eid chola.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox">
                 <div class="work-img">
-                  <img src="/PIC/eid chola.jpg" alt="" class="img-fluid">
+                  <img src="./PIC/eid chola.jpg" alt="" class="img-fluid">
                 </div>
               </a>
               <div class="work-content">
@@ -512,7 +519,7 @@
             <div class="work-box">
               <a href="/PIC/honey.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox">
                 <div class="work-img">
-                  <img src="/PIC/honey.jpg" alt="" class="img-fluid">
+                  <img src="./PIC/honey.jpg" alt="" class="img-fluid">
                 </div>
               </a>
               <div class="work-content">
@@ -536,7 +543,7 @@
             <div class="work-box">
               <a href="/PIC/maharani.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox">
                 <div class="work-img">
-                  <img src="/PIC/maharani.jpg" alt="" class="img-fluid">
+                  <img src="./PIC/maharani.jpg" alt="" class="img-fluid">
                 </div>
               </a>
               <div class="work-content">
@@ -560,7 +567,7 @@
             <div class="work-box">
               <a href="/PIC/webs.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox">
                 <div class="work-img">
-                  <img src="/PIC/webs.jpg" alt="" class="img-fluid">
+                  <img src="./PIC/webs.jpg" alt="" class="img-fluid">
                 </div>
               </a>
               <div class="work-content">
@@ -584,7 +591,7 @@
             <div class="work-box">
               <a href="/PIC/rural.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox">
                 <div class="work-img">
-                  <img src="/PIC/rural.jpg" alt="" class="img-fluid">
+                  <img src="./PIC/rural.jpg" alt="" class="img-fluid">
                 </div>
               </a>
               <div class="work-content">
@@ -822,7 +829,7 @@
                           </div>
                         </div>
                       </form>-->
-                      <form action="/action_page.php" name="myform" >
+                      <form  name="submit-to-google-sheet" >
                         <div class="row">
                           <div class="col-md-12 mb-3">
                             <div class="form-group">
@@ -836,7 +843,7 @@
                           </div>
                           <div class="col-md-12 mb-3">
                             <div class="form-group">
-                              <input type="text" name="name" class="form-control" id="subject" placeholder="Subject" required>
+                              <input type="text" name="subject" class="form-control" id="subject" placeholder="Subject" required>
                             </div>                            
                           </div>
                           <div class="col-md-12">
@@ -851,6 +858,17 @@
 
                         </div>
                       </form>
+                      <script>
+                        const scriptURL = 'https://script.google.com/macros/s/AKfycbwDcizs0EYXSai7DkKAmWwEz5asoUe3gM_LAiFftpBKBieh8dOkDq4ylImFd6AhTqjZ/exec'
+                        const form = document.forms['submit-to-google-sheet']
+                      
+                        form.addEventListener('submit', e => {
+                          e.preventDefault()
+                          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                            .then(response =>alert("mail sent successfully", response))
+                            .catch(error => console.error('Error!', error.message))
+                        })
+                      </script>
 
                        <!--********************************************************************-->
                     </div>
@@ -907,7 +925,7 @@
               Licensing information: https://bootstrapmade.com/license/
               Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=DevFolio
             -->
-              Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+              Designed by <a href="https://bootstrapmade.com/">Sharfeenakhan</a>
             </div>
           </div>
         </div>
